@@ -1,7 +1,7 @@
 package com.ua.notehub.controller;
 
 import com.ua.notehub.model.Note;
-import com.ua.notehub.servise.NoteService;
+import com.ua.notehub.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -59,10 +59,10 @@ public class NoteController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteNote(@PathVariable Long id) {
+    @DeleteMapping("/{Id}")
+    public ResponseEntity<Void> deleteNote(@PathVariable Long Id) {
 
-        noteService.deleteNote(id);
+        noteService.deleteNote(Id);
         return ResponseEntity.noContent().build();
     }
 

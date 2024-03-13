@@ -1,10 +1,12 @@
 package com.ua.notehub.repository;
 
 import com.ua.notehub.model.Note;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface NoteRepository extends PagingAndSortingRepository<Note, String> {
-    List<Note> findByUserId(Long userId);
+public interface NoteRepository extends JpaRepository<Note,Long> {
+    List<Note> getNotesById(Long Id);
+
+    List<Note> findByUserId(Long id);
 }
